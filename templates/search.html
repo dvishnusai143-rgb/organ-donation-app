@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Donors</title>
+</head>
+<body>
+    <h1>Search Donor by Blood Group</h1>
+
+    <form method="POST">
+        <input type="text" name="blood" placeholder="Enter blood group">
+        <button type="submit">Search</button>
+    </form>
+
+    <br>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Group</th>
+        </tr>
+
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor[0] }}</td>
+            <td>{{ donor[1] }}</td>
+            <td>{{ donor[2] }}</td>
+            <td>{{ donor[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back Home</a>
+</body>
+</html>

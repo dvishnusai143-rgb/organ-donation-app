@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donors List</title>
+</head>
+<body style="font-family:Arial; text-align:center;">
+
+    <h1>Registered Donors</h1>
+
+    <table border="1" style="margin:auto;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Group</th>
+            <th>Action</th>
+        </tr>
+
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor[0] }}</td>
+            <td>{{ donor[1] }}</td>
+            <td>{{ donor[2] }}</td>
+            <td>{{ donor[3] }}</td>
+            <td><a href="/delete/{{ donor[0] }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
